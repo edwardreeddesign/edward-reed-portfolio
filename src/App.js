@@ -1,8 +1,10 @@
 import React from "react";
 import GlobalStyle from "./GlobalStyles";
 
+//animation
+import { AnimatePresence } from "framer-motion";
 //Components
-import Hero from "./Components/Hero";
+import Main from "./Pages/Main";
 import Header from "./Components/Header";
 
 function App() {
@@ -10,8 +12,9 @@ function App() {
     <div className="App">
       <GlobalStyle />
       <Header />
-
-      <Hero />
+      <AnimatePresence exitBeforeEnter>
+        <Main />
+      </AnimatePresence>
     </div>
   );
 }
