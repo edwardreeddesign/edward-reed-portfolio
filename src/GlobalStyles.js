@@ -24,6 +24,8 @@ body {
     padding-top: 8rem;
     color: var(--clr-dark);
     font-family: var(--ff-main);
+    line-height: 1.5;
+   
 }
 
 h1 {

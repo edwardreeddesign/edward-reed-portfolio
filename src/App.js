@@ -6,6 +6,7 @@ import { AnimatePresence } from "framer-motion";
 //Components
 import Main from "./Pages/Main";
 import Header from "./Components/Header";
+import Footer from "./Components/Footer";
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
       <AnimatePresence exitBeforeEnter>
         <Main />
       </AnimatePresence>
+      <Footer />
     </div>
   );
 }

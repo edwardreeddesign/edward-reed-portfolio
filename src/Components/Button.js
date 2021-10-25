@@ -36,6 +36,7 @@ const StyledButton = styled.button`
 
   &:hover,
   &:active {
+    transform: scale(0.9);
     background: ${(p) =>
       p.primary ? "#d4e1e1" : p.secondary ? "#dce7fa" : ""};
   }
