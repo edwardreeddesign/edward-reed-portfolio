@@ -16,8 +16,8 @@ const StyledFooter = styled.div`
   align-items: center;
   justify-content: space-around;
   height: 4.3;
-  background-color: var(--clr-dark);
-  color: var(--clr-light);
+  background-color: var(--clr-med);
+  color: var(--clr-dark);
   img {
     height: 4rem;
   }

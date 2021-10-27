@@ -20,16 +20,33 @@ const GlobalStyle = createGlobalStyle`
 }
 
 body {
-    background-color: var(--clr-med);
-    padding-top: 8rem;
+    background-color: var(--clr-light);
     color: var(--clr-dark);
     font-family: var(--ff-main);
-    line-height: 1.5;
+ 
    
 }
 
 h1 {
     font-family: var(--ff-title);
+}
+
+span {
+    font-weight: 700;
+    color: var(--clr-accent)
+}
+
+a {
+    font-size: 1.4rem;
+    font-family: var(--ff-title);
+    color: var(--clr-dark);
+    font-weight:600;
+}
+
+p {
+    padding: 1.5rem 0;
+    font-size: 1.4rem;
+    line-height: 150%
 }
 `;
 

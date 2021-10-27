@@ -1,55 +1,109 @@
 import React from "react";
 import styled from "styled-components";
 import navLogo from "../Images/logo-small.svg";
+import { Link, useLocation } from "react-router-dom";
+import { motion } from "framer-motion";
 
 const Header = () => {
+  const { pathname } = useLocation();
   return (
     <StyledHeader>
-      <div className="logo">
+      <Link to="/">
         <img src={navLogo} alt="Edward Reed Designs Small Logo" />
-      </div>
-      <div className="links">
-        <ul>
-          <li>Home</li>
-          <li>About</li>
-          <li>Projects</li>
-          <li>Contacts</li>
-        </ul>
-      </div>
+      </Link>
+
+      <ul>
+        <li>
+          <Link to="/">Home</Link>
+          <Line
+            transition={{ duration: 0.75 }}
+            initial={{ width: "0" }}
+            animate={{ width: pathname === "/" ? "50%" : "0" }}
+          />
+        </li>
+        <li>
+          <Link to="/about">About</Link>
+          <Line
+            transition={{ duration: 0.75 }}
+            initial={{ width: "0" }}
+            animate={{ width: pathname === "/about" ? "50%" : "0" }}
+          />
+        </li>
+        <li>
+          <Link to="/projects">Projects</Link>
+          <Line
+            transition={{ duration: 0.75 }}
+            initial={{ width: "0" }}
+            animate={{ width: pathname === "/projects" ? "50%" : "0" }}
+          />
+        </li>
+        <li>
+          <Link to="/contact">Contact</Link>
+          <Line
+            transition={{ duration: 0.75 }}
+            initial={{ width: "0" }}
+            animate={{ width: pathname === "/contact" ? "50%" : "0" }}
+          />
+        </li>
+      </ul>
     </StyledHeader>
   );
 };
 
 const StyledHeader = styled.div`
-  position: fixed;
-  inset: 0;
-  width: 100%;
-  height: 4.3rem;
+  min-height: 10vh;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  background: #d0dedf;
-  padding: 0 5rem 0 5rem;
-  font-family: var(--ff-title);
-  font-weight: 600;
-  font-size: 1.3rem;
-  color: #151b27;
+  padding: 1rem 10rem;
+  margin: auto;
+  background: var(--clr-med);
+  position: sticky;
+  top: 0;
   z-index: 10;
 
   img {
     height: 4rem;
   }
 
-  .links {
-    width: 40%;
-    margin-right: 5rem;
+  a {
+    text-decoration: none;
+    color: var(--clr-dark);
+  }
 
-    ul {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      list-style: none;
+  ul {
+    display: flex;
+    list-style-type: none;
+  }
+
+  li {
+    padding-left: 10rem;
+    position: relative;
+  }
+
+  @media (max-width: 1500px) {
+    flex-direction: column;
+    padding: 2rem;
+    justify-content: space-around;
+    width: 100%;
+
+    li {
+      padding: 1rem 2rem;
     }
+  }
+`;
+
+const Line = styled(motion.div)`
+  height: 0.3rem;
+  background: var(--clr-accent);
+  width: 0;
+  position: absolute;
+  bottom: -40%;
+  left: 60%;
+
+  @media (max-width: 1500px) {
+    bottom: 0;
+    left: 25%;
   }
 `;
 

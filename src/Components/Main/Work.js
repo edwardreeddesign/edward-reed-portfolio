@@ -22,7 +22,7 @@ const Work = () => {
       initial="hidden"
     >
       <Description>
-        <h1>Frameworks Used</h1>
+        <h1>Technologies</h1>
         <Cards>
           <Card>
             <div className="icon">
