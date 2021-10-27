@@ -18,7 +18,7 @@ export const Image = styled(motion.div)`
   flex: 1;
   overflow: hidden;
   z-index: 2;
-  box-shadow: -30px -30px 2px var(--clr-accent);
+  box-shadow: -30px -30px 0 var(--clr-accent);
   img {
     width: 100%;
     height: 70vh;
@@ -36,12 +36,12 @@ export const Description = styled(motion.div)`
   flex: 1;
   padding-left: 5rem;
   z-index: 2;
-
+  height: 70vh;
   h1 {
     font-size: 4.5rem;
     font-weight: 700;
     margin-bottom: 3rem;
-    filter: drop-shadow(-10px -10px 2px var(--clr-accent));
+    filter: drop-shadow(-10px -10px 0 var(--clr-accent));
   }
   h2 {
     font-size: 3rem;
