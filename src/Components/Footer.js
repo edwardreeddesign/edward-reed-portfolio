@@ -14,16 +14,20 @@ const Footer = () => {
 const StyledFooter = styled.div`
   display: flex;
   align-items: center;
-  justify-content: space-around;
+  justify-content: space-between;
+  width: 100%;
   height: 4.3;
   background-color: var(--clr-med);
   color: var(--clr-dark);
+  padding: 0 2rem;
+
   img {
-    height: 4rem;
+    height: 2.5rem;
   }
 
   h3 {
     font-family: cursive;
+    font-size: 0.8rem;
   }
 `;
 

@@ -17,9 +17,15 @@ const GlobalStyle = createGlobalStyle`
     box-sizing: border-box;
     padding: 0;
     margin: 0;
+    width: 100%;
+}
+
+html {
+    height: 100%;
 }
 
 body {
+   height: 100%;
     background-color: var(--clr-light);
     color: var(--clr-dark);
     font-family: var(--ff-main);
@@ -27,8 +33,18 @@ body {
    
 }
 
-h1 {
+h1,
+h2,
+h3 {
     font-family: var(--ff-title);
+}
+
+h1 {
+    font-size: clamp(1.8rem, 7vw, 4rem);
+}
+
+h2 {
+    font-size: clamp(1.6rem, 7vw, 2.8rem);
 }
 
 span {
@@ -45,7 +61,7 @@ a {
 
 p {
     padding: 1.5rem 0;
-    font-size: 1.4rem;
+    font-size: clamp(.8rem, 7vw, 1.4rem);
     line-height: 150%
 }
 `;

@@ -108,21 +108,21 @@ const About = () => {
         </Hide>
       </Wrapper>
       <Wrapper>
-        <motion.h1 variants={fade}>Social Links</motion.h1>
-        <motion.div variants={lineAnim} className="line"></motion.div>
         <motion.div ref={element2} animate={controls2} variants={scrollReveal}>
+          <motion.h1 variants={fade}>Social Links</motion.h1>
+          <motion.div variants={lineAnim} className="line"></motion.div>
           <SocialLinks />
         </motion.div>
       </Wrapper>
       <Wrapper>
-        <motion.h1 variants={fade}>Why Choose Me?</motion.h1>
-        <motion.div variants={lineAnim} className="line"></motion.div>
         <Hide>
           <motion.div
             ref={element3}
             animate={controls3}
             variants={scrollReveal}
           >
+            <motion.h1 variants={fade}>Why Choose Me?</motion.h1>
+            <motion.div variants={lineAnim} className="line"></motion.div>
             <p>
               In a world of ever changing ways of doing almost everything. Now
               is the time to create a website that will change with how people
@@ -159,20 +159,18 @@ const About = () => {
 };
 
 const StyledAbout = styled(motion.div)`
-  min-height: 100vh;
+  /* min-height: 100vh; */
   overflow: hidden;
-  padding: 5rem 10rem;
+  padding: 5rem 5rem;
   color: var(--clr-med);
+
+  @media (max-width: 768px) {
+    padding: 2rem 2rem;
+  }
 `;
 
 const Wrapper = styled(motion.div)`
-  padding-bottom: 10rem;
-  overflow: hidden;
-
-  h1 {
-    font-size: 4rem;
-    font-weight: 700;
-  }
+  padding-bottom: 5rem;
 
   .line {
     height: 0.5rem;

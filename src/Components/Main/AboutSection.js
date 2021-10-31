@@ -58,14 +58,18 @@ const Wrapper = styled(motion.div)`
   height: 90vh;
   text-align: center;
 
+  @media (max-width: 768px) {
+    margin: 20rem auto;
+  }
+
   h1 {
-    font-size: 4rem;
+    /* font-size: 4rem; */
     padding-bottom: 5rem;
     font-weight: 500;
   }
 
   p {
-    font-size: 1.8rem;
+    /* font-size: 1.8rem; */
     text-align: left;
     margin-bottom: 1rem;
   }
@@ -76,7 +80,7 @@ const Wrapper = styled(motion.div)`
   }
 
   .button {
-    margin: 5rem;
+    margin: 5rem auto;
   }
 `;
 

@@ -20,6 +20,7 @@ const Hero = () => {
           alt="Edward Reed Portrait"
         />
       </Image>
+      <Wave />
       <Description>
         <motion.div>
           <Hide>
@@ -41,12 +42,10 @@ const Hero = () => {
             <Button primary>LET'S WORK TOGETHER</Button>
           </motion.div>
           <motion.div variants={fade}>
-            <Button secondary>VIEW MY WORK</Button>
+            <Button outline>VIEW MY WORK</Button>
           </motion.div>
         </Buttons>
       </Description>
-
-      <Wave />
     </About>
   );
 };
@@ -55,7 +54,7 @@ const Buttons = styled(motion.div)`
   display: flex;
   align-items: flex-end;
   justify-content: flex-start;
-  margin-top: 20rem;
+  margin-top: 10rem;
   gap: 3rem;
 `;
 

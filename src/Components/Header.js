@@ -51,7 +51,7 @@ const Header = () => {
 };
 
 const StyledHeader = styled.div`
-  min-height: 10vh;
+  min-height: 4.3rem;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -79,17 +79,6 @@ const StyledHeader = styled.div`
   li {
     padding-left: 10rem;
     position: relative;
-  }
-
-  @media (max-width: 1500px) {
-    flex-direction: column;
-    padding: 2rem;
-    justify-content: space-around;
-    width: 100%;
-
-    li {
-      padding: 1rem 2rem;
-    }
   }
 `;
 

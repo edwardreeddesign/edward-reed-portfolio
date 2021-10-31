@@ -20,9 +20,10 @@ const SocialLinks = () => {
 const StyledLinks = styled(motion.div)`
   background: var(--clr-med);
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
   justify-content: center;
-  height: 30vh;
+  height: 20vh;
 
   .icons {
     font-size: 5rem;

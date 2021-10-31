@@ -10,7 +10,7 @@ import Footer from "./Components/Footer";
 import About from "./Pages/About";
 import Projects from "./Pages/Projects";
 import Contact from "./Pages/Contact";
-import ProjectDetail from "./Components/Projects/ProjectDetail";
+import ProjectDetail from "./Pages/ProjectDetail";
 //Router
 import { Switch, Route, useLocation } from "react-router-dom";
 
