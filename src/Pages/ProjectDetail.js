@@ -3,19 +3,14 @@ import styled from "styled-components";
 import { useHistory } from "react-router-dom";
 import { ProjectState } from "../Data/projectState";
 import { motion } from "framer-motion";
-import {
-  pageAnimation,
-  fade,
-  lineAnim,
-  slider,
-} from "../Components/Animations";
+import { pageAnimation, fade, lineAnim } from "../Components/Animations";
 import ProjectDescription from "../Components/ProjectDetail/ProjectDescription";
 import ImageDetail from "../Components/ProjectDetail/ImageDetail";
 
 const ProjectDetail = () => {
   const history = useHistory();
   const url = history.location.pathname;
-  const [projects, setProjects] = useState(ProjectState);
+  const [projects] = useState(ProjectState);
   const [project, setProject] = useState(null);
 
   // useEffect

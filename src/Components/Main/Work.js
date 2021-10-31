@@ -6,9 +6,8 @@ import html from "../../Images/html-5.png";
 import javascript from "../../Images/javascript.svg";
 import reactJs from "../../Images/reactJs.png";
 import home2 from "../../Images/home2.jpg";
-import home3 from "../../Images/home2.jpg";
 
-import { About, Description, Image } from "../../UI/styles";
+import { About, Description } from "../../UI/styles";
 import { scrollReveal } from "../Animations";
 import { useScroll } from "../UseScroll";
 
