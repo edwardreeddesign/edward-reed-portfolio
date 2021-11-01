@@ -16,6 +16,12 @@ const Button = ({ children, primary, secondary, outline, disabled }) => {
 
 const StyledButton = styled.button`
   cursor: pointer;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: fit-content;
+  align-items: center;
   font-size: clamp(0.8rem, 5vw, 1.4rem);
   font-family: var(--ff-title);
   border-radius: 0.8rem;

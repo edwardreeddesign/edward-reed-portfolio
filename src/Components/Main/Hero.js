@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import styled from "styled-components";
 import heroImg from "../../Images/edward-reed.png";
 import Wave from "../Wave";
@@ -39,10 +40,14 @@ const Hero = () => {
         </motion.div>
         <Buttons>
           <motion.div variants={fade}>
-            <Button primary>LET'S WORK TOGETHER</Button>
+            <Link to="/contact">
+              <Button primary>LET'S WORK TOGETHER</Button>
+            </Link>
           </motion.div>
           <motion.div variants={fade}>
-            <Button outline>VIEW MY WORK</Button>
+            <Link to="/projects">
+              <Button outline>VIEW MY WORK</Button>
+            </Link>
           </motion.div>
         </Buttons>
       </Description>

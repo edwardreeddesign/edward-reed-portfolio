@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import styled from "styled-components";
 import Button from "../Components/Button";
 import { motion } from "framer-motion";
@@ -151,8 +152,11 @@ const About = () => {
               what they can.
             </p>
           </motion.div>
+
+          <Link to="/contact">
+            <Button primary>Contact</Button>
+          </Link>
         </Hide>
-        <Button primary>Contact</Button>
       </Wrapper>
     </StyledAbout>
   );

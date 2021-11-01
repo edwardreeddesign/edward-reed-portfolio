@@ -55,6 +55,7 @@ a {
     font-family: var(--ff-title);
     color: var(--clr-dark);
     font-weight:600;
+    text-decoration: none;
 }
 
 p {

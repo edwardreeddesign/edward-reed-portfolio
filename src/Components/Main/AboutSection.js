@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import styled from "styled-components";
 // import { About, Description, Image } from "../../UI/styles";
 import Button from "../Button";
@@ -40,7 +41,9 @@ const AboutSection = () => {
             taught myself Web Development.
           </p>
           <div className="button">
-            <Button primary>LEARN MORE ABOUT ME</Button>
+            <Link to="/about">
+              <Button primary>LEARN MORE ABOUT ME</Button>
+            </Link>
           </div>
         </div>
       </Wrapper>
