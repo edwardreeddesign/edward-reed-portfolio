@@ -5,7 +5,7 @@ import GlobalStyle from "./GlobalStyles";
 import { AnimatePresence } from "framer-motion";
 //Components
 import Main from "./Pages/Main";
-import Header from "./Components/Header";
+import Header from "./Nav/Header";
 import Footer from "./Components/Footer";
 import About from "./Pages/About";
 import Projects from "./Pages/Projects";

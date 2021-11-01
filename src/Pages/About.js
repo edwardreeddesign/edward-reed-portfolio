@@ -166,6 +166,7 @@ const StyledAbout = styled(motion.div)`
 
   @media (max-width: 768px) {
     padding: 2rem 2rem;
+    margin-top: 4rem;
   }
 `;
 

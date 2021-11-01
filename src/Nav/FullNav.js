@@ -1,18 +1,19 @@
 import React from "react";
 import styled from "styled-components";
-import navLogo from "../Images/logo-small.svg";
+import FullLogo from "../Images/full-logo.svg";
 import { Link, useLocation } from "react-router-dom";
 import { motion } from "framer-motion";
 
-const Header = () => {
+const FullNav = () => {
   const { pathname } = useLocation();
   return (
-    <StyledHeader>
-      <Link to="/">
-        <img src={navLogo} alt="Edward Reed Designs Small Logo" />
-      </Link>
-
-      <ul>
+    <StyledNav>
+      <div>
+        <Link to="/">
+          <img src={FullLogo} alt="Edward Reed Full Logo" />
+        </Link>
+      </div>
+      <StyledUl>
         <li>
           <Link to="/">Home</Link>
           <Line
@@ -45,40 +46,52 @@ const Header = () => {
             animate={{ width: pathname === "/contact" ? "50%" : "0" }}
           />
         </li>
-      </ul>
-    </StyledHeader>
+      </StyledUl>
+    </StyledNav>
   );
 };
 
-const StyledHeader = styled.div`
-  min-height: 4.3rem;
+const StyledNav = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  height: 4.2rem;
+  width: 100%;
+  background: var(--clr-med);
+
+  /* min-height: 4.3rem;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 1rem 10rem;
+  width: 100%;
   margin: auto;
   background: var(--clr-med);
   position: sticky;
-  top: 0;
+  top: 0; */
   z-index: 10;
 
   img {
     height: 4rem;
+    width: 25rem;
+  }
+
+  @media (max-width: 768px) {
+    display: none;
+  }
+`;
+
+const StyledUl = styled.ul`
+  display: flex;
+  justify-content: space-around;
+  list-style-type: none;
+  width: 70%;
+
+  li {
+    position: relative;
   }
 
   a {
     text-decoration: none;
-    color: var(--clr-dark);
-  }
-
-  ul {
-    display: flex;
-    list-style-type: none;
-  }
-
-  li {
-    padding-left: 10rem;
-    position: relative;
   }
 `;
 
@@ -87,13 +100,8 @@ const Line = styled(motion.div)`
   background: var(--clr-accent);
   width: 0;
   position: absolute;
-  bottom: -40%;
-  left: 60%;
-
-  @media (max-width: 1500px) {
-    bottom: 0;
-    left: 25%;
-  }
+  bottom: -25%;
+  left: -2%;
 `;
 
-export default Header;
+export default FullNav;

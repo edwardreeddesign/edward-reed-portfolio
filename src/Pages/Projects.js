@@ -89,6 +89,10 @@ const Work = styled(motion.div)`
   h1 {
     padding: 1rem 0;
   }
+
+  @media (max-width: 768px) {
+    padding: 5rem 2rem;
+  }
 `;
 
 const StyledProjects = styled(motion.div)`
@@ -110,6 +114,12 @@ const StyledProjects = styled(motion.div)`
 
 const Hide = styled.div`
   overflow: hidden;
+
+  img {
+    width: 100%;
+    height: 70vh;
+    object-fit: cover;
+  }
 `;
 
 //Frame Animation

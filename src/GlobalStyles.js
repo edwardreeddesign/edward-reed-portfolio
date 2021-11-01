@@ -20,12 +20,10 @@ const GlobalStyle = createGlobalStyle`
     width: 100%;
 }
 
-html {
-    height: 100%;
-}
+
 
 body {
-   height: 100%;
+  
     background-color: var(--clr-light);
     color: var(--clr-dark);
     font-family: var(--ff-main);
@@ -53,7 +51,7 @@ span {
 }
 
 a {
-    font-size: 1.4rem;
+    font-size: clamp(0.8, 4vw, 1.4rem);
     font-family: var(--ff-title);
     color: var(--clr-dark);
     font-weight:600;

@@ -155,11 +155,11 @@ const Contact = (props) => {
 };
 
 const Wrapper = styled(motion.div)`
-  margin: 2rem 1rem 0 1rem;
+  margin: 4.3rem 1rem 0 1rem;
 
   .line {
     height: 0.5rem;
-    background: var(--clr-accent);
+    background: var(--clr-dark);
   }
 `;
 
