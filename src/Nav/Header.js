@@ -1,13 +1,13 @@
 import React from "react";
-import styled from "styled-components";
-import navLogo from "../Images/logo-small.svg";
-import { Link, useLocation } from "react-router-dom";
-import { motion } from "framer-motion";
+// import styled from "styled-components";
+// import navLogo from "../Images/logo-small.svg";
+// import {  useLocation } from "react-router-dom";
+// import { motion } from "framer-motion";
 import FullNav from "./FullNav";
 import MobileNav from "./MobileNav";
 
 const Header = () => {
-  const { pathname } = useLocation();
+  // const { pathname } = useLocation();
   return (
     <>
       <FullNav />
