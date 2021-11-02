@@ -28,6 +28,7 @@ export const Image = styled(motion.div)`
   }
 
   @media (max-width: 768px) {
+    padding: 5rem 0;
     img {
       width: 90%;
       height: 60vh;

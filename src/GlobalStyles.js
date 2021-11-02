@@ -53,7 +53,7 @@ span {
 a {
     font-size: clamp(0.8, 4vw, 1.4rem);
     font-family: var(--ff-title);
-    color: var(--clr-dark);
+    color: inherit;
     font-weight:600;
     text-decoration: none;
 }

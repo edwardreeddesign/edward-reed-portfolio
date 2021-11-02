@@ -76,16 +76,19 @@ const Headline = styled.div`
   background: var(--clr-white);
 
   h1 {
-    font-size: clamp(1.8rem, 4vh, 4.5rem);
+    /* font-size: clamp(1.8rem, 4vh, 4.5rem); */
     font-weight: 700;
     width: 100%;
   }
 
   .line {
     height: 0.5rem;
-    background: var(--clr-accent);
+    background: var(--clr-dark);
     margin-bottom: 3rem;
-    /* rgba(21, 27, 39, 0.7) */
+  }
+
+  @media (max-width: 768px) {
+    padding-top: 8rem;
   }
 `;
 
@@ -123,16 +126,26 @@ const Wrapper = styled(motion.div)`
 `;
 
 const Description = styled.div`
+  min-height: 50vh;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(520px, 1fr));
+  /* grid-auto-flow: repeat(auto-fill, minmax(200px, 1fr)); */
+  grid-gap: 0.5rem;
   background: var(--clr-white);
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
+  max-width: 100%;
   align-items: center;
-  gap: 5rem;
-  padding: 5rem 3rem;
+  /* display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: center;
+  gap: 5rem; */
+  margin: 0 auto;
+  padding: 5rem 2rem;
 
   @media (max-width: 720px) {
-    padding: 3rem;
+    grid-template-columns: repeat(auto-fill, minmax(360px, 1fr));
+    gap: 1rem;
+    padding: 1rem;
   }
 `;
 

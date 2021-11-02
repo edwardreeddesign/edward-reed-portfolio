@@ -3,38 +3,51 @@ import styled from "styled-components";
 import MobileLogo from "../Images/logo-small.svg";
 import { Link, useLocation } from "react-router-dom";
 import { motion } from "framer-motion";
-import { fade } from "../Components/Animations";
+import { fade, titleAnim } from "../Components/Animations";
 
 const MobileNav = () => {
-  const [isOpen, setIsOpen] = useState(false);
   const { pathname } = useLocation();
+  const [isOpen, setIsOpen] = useState(false);
   const toggle = () => {
     setIsOpen(!isOpen);
   };
+
   return (
-    <StyledNav>
-      <div className="hamburger" onClick={toggle} isOpen={isOpen}>
-        <div class="line"></div>
-        <div class="line"></div>
-        <div class="line"></div>
-      </div>
+    <StyledNav variants={titleAnim} initial="hidden" animate="show" exit="exit">
+      <StyledHamburger className="hamburger" onClick={toggle} isOpen={isOpen}>
+        <div className="line line1"></div>
+        <div className="line line2"></div>
+        <div className="line line3"></div>
+      </StyledHamburger>
       <div className="img">
-        <Link to="/" isOpen={!isOpen}>
+        <Link to="/">
           <img src={MobileLogo} alt="Edward Reed Full Logo" />
         </Link>
       </div>
-      <StyledUl isOpen={isOpen} initial="hidden" animate="show" exit="exit">
-        <motion.li variants={fade} initial="hidden" animate="show" exit="exit">
+      <StyledUl
+        isOpen={isOpen}
+        toggle={toggle}
+        variants={titleAnim}
+        initial="hidden"
+        animate="show"
+        exit="exit"
+      >
+        <motion.li
+          // variants={titleAnim}
+          initial="hidden"
+          animate="show"
+          exit="exit"
+        >
           <Link to="/" onClick={toggle}>
             Home
           </Link>
           <Line
             transition={{ duration: 0.75 }}
             initial={{ width: "0" }}
-            animate={{ width: pathname === "/" ? "50%" : "0" }}
+            animate={{ width: pathname === "/" ? "30%" : "0" }}
           />
         </motion.li>
-        <li>
+        <motion.li variants={fade} initial="hidden" animate="show" exit="exit">
           <Link to="/about" onClick={toggle}>
             About
           </Link>
@@ -43,8 +56,8 @@ const MobileNav = () => {
             initial={{ width: "0" }}
             animate={{ width: pathname === "/about" ? "50%" : "0" }}
           />
-        </li>
-        <li>
+        </motion.li>
+        <motion.li variants={fade} initial="hidden" animate="show" exit="exit">
           <Link to="/projects" onClick={toggle}>
             Projects
           </Link>
@@ -53,8 +66,8 @@ const MobileNav = () => {
             initial={{ width: "0" }}
             animate={{ width: pathname === "/projects" ? "50%" : "0" }}
           />
-        </li>
-        <li>
+        </motion.li>
+        <motion.li variants={fade} initial="hidden" animate="show" exit="exit">
           <Link to="/contact" onClick={toggle}>
             Contact
           </Link>
@@ -63,7 +76,7 @@ const MobileNav = () => {
             initial={{ width: "0" }}
             animate={{ width: pathname === "/contact" ? "50%" : "0" }}
           />
-        </li>
+        </motion.li>
       </StyledUl>
     </StyledNav>
   );
@@ -79,18 +92,6 @@ const StyledNav = styled.div`
   background: var(--clr-med);
   z-index: 10;
 
-  .hamburger {
-    z-index: 10;
-    cursor: pointer;
-    margin-left: 3rem;
-    .line {
-      width: 1.7rem;
-      height: 3px;
-      background-color: var(--clr-dark);
-      margin-bottom: 0.3rem;
-    }
-  }
-
   .img {
     z-index: 2000;
     img {
@@ -104,7 +105,37 @@ const StyledNav = styled.div`
   }
 `;
 
-const StyledUl = styled.ul`
+const StyledHamburger = styled.div`
+  z-index: 10;
+  cursor: pointer;
+  margin-left: 3rem;
+
+  .line {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    width: 1.7rem;
+    height: 3px;
+    background-color: var(--clr-dark);
+    margin-bottom: 0.3rem;
+    transition: all 350ms ease-in-out;
+  }
+
+  .line1 {
+    transform: ${({ isOpen }) =>
+      isOpen ? "rotate(45deg) translate(0px, 10px)" : "0"};
+  }
+  .line2 {
+    opacity: ${({ isOpen }) => (isOpen ? "0" : "1")};
+  }
+  .line3 {
+    transform: ${({ isOpen }) =>
+      isOpen ? "rotate(-45deg) translate(0px, -10px)" : "0"};
+  }
+`;
+
+const StyledUl = styled(motion.ul)`
   position: fixed;
   opacity: ${({ isOpen }) => (isOpen ? ".85" : "0")};
   bottom: ${({ isOpen }) => (isOpen ? "0" : "100%")};
@@ -117,6 +148,7 @@ const StyledUl = styled.ul`
   align-items: center;
   list-style-type: none;
   margin-top: 4rem;
+  padding: 6rem 0;
   z-index: 5;
   transition: all 300ms ease-in-out;
 
